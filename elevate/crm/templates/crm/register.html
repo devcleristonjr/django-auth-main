@@ -1,18 +1,62 @@
-<html>
+{% extends "crm/layout.html" %}
+{% block content %}
 
-    <h1> Register now! </h1>
+<!DOCTYPE html>
+<html lang="en">
 
-    <form method="POST" autocomplete="off">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
 
-        {% csrf_token %}
+        .register-container {
+            margin-top: 50px;
+        }
 
-        {{registerform.as_p}}
+        .register-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-        <input type="submit" value="Register"/>
+        .register-title {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
 
+<body>
+    <div class="container">
+        <div class="row justify-content-center register-container">
+            <div class="col-md-6">
+                <div class="register-form">
+                    <h1 class="register-title text-center">Register now!</h1>
+                    <form method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        {{ registerform.as_p }}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </form>
-
-
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
 </html>
+
+
+{% endblock %}

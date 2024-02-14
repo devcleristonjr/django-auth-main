@@ -38,7 +38,6 @@ def register(request):
     return render(request, 'crm/register.html', context=context)
 
 
-
 def my_login(request):
 
     form = LoginForm()

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+
+        .homepage-container {
+            text-align: center;
+        }
+
+        .homepage-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- As a link -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand"><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Home</a></span>
+    </div>
+  </nav>
+  
+{% block content %}
+
+{% endblock %}
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
